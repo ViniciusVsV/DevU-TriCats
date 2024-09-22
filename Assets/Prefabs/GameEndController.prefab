@@ -47,4 +47,5 @@ MonoBehaviour:
   levelName1: Fase1
   levelName2: Fase2
   levelName3: Fase3
-  finalLevel: MenuFinal
+  levelSelector: SeletorFase
+  finalScreen: MenuFinal
