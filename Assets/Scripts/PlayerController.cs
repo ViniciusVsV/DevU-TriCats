@@ -32,21 +32,6 @@ public class PlayerController : MonoBehaviour{
 
         Vector2 moveDirection = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
         rb.velocity = moveDirection * moveSpeed;
-
-        if(rb.velocity.x != 0f)
-            animator.SetBool("isMovingX", true);
-        else
-            animator.SetBool("isMovingX", false);
-
-        if(rb.velocity.y > Mathf.Epsilon)
-            animator.SetBool("isMovingUp", true);
-        else
-            animator.SetBool("isMovingUp", false);
-
-        if(rb.velocity.y < Mathf.Epsilon)
-            animator.SetBool("isMovingDown", true);
-        else
-            animator.SetBool("isMovingDown", false);
     }
     private void OnTriggerEnter2D(Collider2D other) {
         if(other.CompareTag("Portal")){
