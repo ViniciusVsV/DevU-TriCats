@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour{
     [SerializeField] private float moveSpeed;
+    private GameEndController gameEndController;
     private bool canMove;
 
     private Rigidbody2D rb;
@@ -14,6 +15,8 @@ public class PlayerController : MonoBehaviour{
 
     void Start(){
         rb = GetComponent<Rigidbody2D>();
+        gameEndController = FindFirstObjectByType<GameEndController>();
+
     }
 
     void Update(){
@@ -26,5 +29,10 @@ public class PlayerController : MonoBehaviour{
 
         Vector2 moveDirection = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
         rb.velocity = moveDirection * moveSpeed;
+    }
+    private void OnTriggerEnter2D(Collider2D other) {
+        if(other.CompareTag("Portal")){
+            gameEndController.ChangeScene();
+        }
     }
 }
