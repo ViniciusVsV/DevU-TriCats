@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - CatSelector
   layers:
   - Default
   - TransparentFX
@@ -40,4 +41,13 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: BoxSelector
+    uniqueID: 3464480727
+    locked: 0
+  - name: CatSelector
+    uniqueID: 1892362195
+    locked: 0
+  - name: Player
+    uniqueID: 97407645
     locked: 0
