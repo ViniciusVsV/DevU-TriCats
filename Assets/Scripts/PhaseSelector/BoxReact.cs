@@ -26,12 +26,15 @@ public class BoxReact : MonoBehaviour{
         else{
             isDisabled = false;
             PlayerPrefs.SetInt(levelName, 0);
+            PlayerPrefs.Save();
         }
     }
 
     void Update(){
         if(isHovered && Input.GetMouseButtonDown(0) && PlayerPrefs.GetInt(levelName) == 0){
             PlayerPrefs.SetInt(levelName, 1);
+            PlayerPrefs.Save();
+
             SceneManager.LoadScene(levelName);
         }
     }
