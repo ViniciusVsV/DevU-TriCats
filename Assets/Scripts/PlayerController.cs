@@ -19,7 +19,6 @@ public class PlayerController : MonoBehaviour{
         rb = GetComponent<Rigidbody2D>();
         gameEndController = FindFirstObjectByType<GameEndController>();
         animator = GetComponent<Animator>();
-
     }
 
     void Update(){
