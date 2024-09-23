@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEditor.Animations;
 using UnityEditor.Tilemaps;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour{
     [SerializeField] private float moveSpeed;
@@ -73,8 +74,14 @@ public class PlayerController : MonoBehaviour{
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
+         if (other.CompareTag("Danger"))
+        {
+            // Se colidir com algo perigoso, o gato morre e a cena é reiniciada
+            SceneManager.LoadScene("Fase3");
+        }
         if(other.CompareTag("Portal")){
             gameEndController.ChangeScene();
         }
     }
+    
 }
