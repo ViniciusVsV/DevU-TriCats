@@ -8,7 +8,7 @@ public class Music : MonoBehaviour
     public static Music instance;
     public void OnMusic()
     {
-        music.Play();   
+        music.Play();
     }
     public void OffMusic()
     {

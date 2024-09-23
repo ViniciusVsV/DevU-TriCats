@@ -20,7 +20,6 @@ public class Timer : MonoBehaviour
         int minutes = Mathf.FloorToInt(elapsedTime / 60);        
         int seconds = Mathf.FloorToInt(elapsedTime % 60);
         timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
-
     }
     public void SaveTime()
     {
@@ -35,15 +34,14 @@ public class Timer : MonoBehaviour
     }
     void Awake()
     {
-        // Verifica se já existe uma instância do contador
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(gameObject);  // Não destrói o objeto ao carregar nova cena
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
-            Destroy(gameObject);  // Se já existir uma instância, destrói o novo objeto
+            Destroy(gameObject);
         }
     }
 }

@@ -11,9 +11,10 @@ public class GameEndController : MonoBehaviour{
     [SerializeField] private string finalScreen;
 
     public void ChangeScene(){
-        if(PlayerPrefs.GetInt(levelName1) == 1 && PlayerPrefs.GetInt(levelName2) == 1 && PlayerPrefs.GetInt(levelName3) == 1)
+        if(PlayerPrefs.GetInt(levelName1) == 1)
         {
            SceneManager.LoadScene(finalScreen);
+           Timer.instance.SaveTime();
         }
         else
             SceneManager.LoadScene(levelSelector);
